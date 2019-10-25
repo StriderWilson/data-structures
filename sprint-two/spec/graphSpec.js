@@ -21,6 +21,7 @@ describe('graph', function() {
   });
 
   it('should remove nodes that were inserted', function() {
+    //debugger;
     graph.addNode(2);
     expect(graph.contains(2)).to.equal(true);
     graph.removeNode(2);
@@ -50,6 +51,7 @@ describe('graph', function() {
     graph.addNode(5);
     graph.addEdge(5, 4);
     expect(graph.hasEdge(4, 5)).to.equal(true);
+    //debugger;
     graph.removeNode(5);
     expect(graph.hasEdge(4, 5)).to.equal(false);
   });
