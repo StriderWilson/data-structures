@@ -53,5 +53,8 @@ describe('linkedList', function() {
   });
 
   // add more tests here to test the functionality of linkedList
+  it('should only accept numerical values', function() {
+    expect(linkedList.addToTail('tail')).to.equal('Only Accepts Numerical Values');
+  });
 
 });

@@ -4,7 +4,9 @@ var LinkedList = function() {
   list.tail = null;
 
   list.addToTail = function(value) {
-
+    if (typeof value !== 'number') {
+      return 'Only Accepts Numerical Values';
+    }
     // create the node
     var newNode = Node(value);
 
