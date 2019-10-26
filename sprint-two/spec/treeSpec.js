@@ -42,4 +42,8 @@ describe('tree', function() {
     expect(tree.contains(8)).to.equal(true);
   });
 
+  it('should only accept numerical values', function() {
+    expect(tree.addChild('child')).to.equal('Only Accepts Numbers');
+  });
+
 });

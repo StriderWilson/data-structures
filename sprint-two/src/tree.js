@@ -14,7 +14,9 @@ var Tree = function(value) {
 var treeMethods = {};
 
 treeMethods.addChild = function(value) {
-
+  if (typeof value !== 'number') {
+    return 'Only Accepts Numbers';
+  }
   // create new obj
   var newChild = Object.create(treeMethods);
   // add properties
