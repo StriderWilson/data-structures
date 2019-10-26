@@ -9,6 +9,8 @@ var setPrototype = {};
 setPrototype.add = function(item) {
   if (!this._storage.includes(item)) {
     this._storage.push(item);
+  } else {
+    return 'Item already Exists';
   }
 };
 
