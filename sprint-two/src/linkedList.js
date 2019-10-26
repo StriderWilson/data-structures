@@ -49,7 +49,7 @@ var LinkedList = function() {
         return false;
       }
     }
-  
+
 
     if (temp.value === target) {
       return true;
@@ -75,4 +75,8 @@ var Node = function(value) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ addToTail = O(n)
+ removeHead = O(1)
+ contains = O(n)
+ Node = O(1)
  */
