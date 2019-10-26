@@ -26,10 +26,11 @@ describe('binarySearchTree', function() {
     binarySearchTree.insert(2);
     binarySearchTree.insert(3);
     binarySearchTree.insert(7);
-    // debugger;
+
     expect(binarySearchTree.contains(7)).to.equal(true);
     expect(binarySearchTree.contains(8)).to.equal(false);
   });
+
 
   it('should execute a callback on every value in a tree using "depthFirstLog"', function() {
     var array = [];
@@ -39,5 +40,20 @@ describe('binarySearchTree', function() {
     binarySearchTree.insert(7);
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3, 7]);
+  });
+
+  it('should work for multiple levels of children', function () {
+    binarySearchTree.insert(3);
+    binarySearchTree.insert(2);
+    binarySearchTree.insert(4);
+    binarySearchTree.insert(1);
+    binarySearchTree.insert(10);
+    binarySearchTree.insert(9);
+    binarySearchTree.insert(11);
+    binarySearchTree.insert(8);
+    binarySearchTree.insert(12);
+
+    expect(binarySearchTree.left.left.value).to.equal(2);
+    expect(binarySearchTree.right.right.right.value).to.equal(12);
   });
 });
