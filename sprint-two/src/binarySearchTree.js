@@ -69,7 +69,32 @@ binaryMethods.contains = function (value) {
 };
 
 binaryMethods.depthFirstLog = function (cb) {
-  
+
+  var depth = function (node) {
+    // check if there's value, perform call back
+    if (node.value) {
+      cb(node.value);
+      // check if there's a right, start recursion
+      if (node.right && node.left) {
+        depth(node.left);
+        depth(node.right);
+      } else if (node.right || node.left) {
+        if (node.left) {
+          depth(node.left);
+        } else {
+          depth(node.right);
+        }
+      }
+    }
+    // check if there's a left, start recursion
+
+  };
+
+
+
+
+  depth(this);
+
 
 };
 
@@ -80,5 +105,5 @@ binaryMethods.depthFirstLog = function (cb) {
  * Complexity: What is the time complexity of the above functions?
  insert = O(1)
  contains = O(1)
-
+ depthFirstLog = O(1)
  */
