@@ -47,6 +47,12 @@ describe('hashTable', function() {
     window.getIndexBelowMaxForKey = oldHashFunction;
   });
 
+  it('should only accept string keys', function() {
+    hashTable.insert(123, 'Tyler');
+    expect(hashTable.retrieve(123)).to.equal('Tyler')
+  });
+
+
   // (Advanced! Remove the extra "x" when you want the following tests to run)
   xit ('should double in size when needed', function() {
     _.each(people, function(person) {
@@ -73,4 +79,6 @@ describe('hashTable', function() {
     hashTable.remove('Mr.');
     expect(hashTable._limit).to.equal(8);
   });
+
+
 });
